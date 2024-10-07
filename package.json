@@ -1,0 +1,29 @@
+{
+  "name": "momo-ios-automation-test",
+  "version": "1.0.0",
+  "description": "Automation test for Momo test app using WebdriverIO and Appium",
+  "main": "tests/*.test.js",
+  "scripts": {
+    "test": "wdio run config/wdio.conf.js"
+  },
+  "keywords": [
+    "momo",
+    "ios",
+    "automation",
+    "webdriverio",
+    "appium"
+  ],
+  "author": "Your Name",
+  "license": "ISC",
+  "devDependencies": {
+    "@wdio/appium-service": "^8.x.x",
+    "@wdio/cli": "^8.x.x",
+    "@wdio/local-runner": "^8.x.x",
+    "@wdio/mocha-framework": "^8.x.x",
+    "@wdio/spec-reporter": "^8.x.x",
+    "appium": "^2.x.x",
+    "chai": "^4.3.6",
+    "ts-node": "^10.9.2",
+    "webdriverio": "^8.x.x"
+  }
+}
