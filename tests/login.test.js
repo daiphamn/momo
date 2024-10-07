@@ -2,14 +2,14 @@ const { expect } = require('chai');
 
 describe('Momo App Tests', () => {
     it('should login successfully', async () => {
-        const allowButton = await $('//android.widget.TextView[@content-desc="Cho phép/Text"]');
+        const allowButton = await $("accessibility id:btn_permission_noti");
         await allowButton.waitForDisplayed({ timeout: 10000 });
         await allowButton.click();
 
-        const phoneInput = await $('//android.widget.TextView[@content-desc="Số điện thoại/Text"]');
+        const phoneInput = await $('[id="PhoneInput"]');
         await phoneInput.setValue('0988575556');
 
-        const continueButton = await $('//android.view.View[@resource-id="Tiếp tục/Button"]');
+        const continueButton = await $('[id="Tiếp tục/Button"]');
         await continueButton.click();
         // Continue
         await passwordInput.setValue('password123');
