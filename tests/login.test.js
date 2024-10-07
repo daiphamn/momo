@@ -6,16 +6,23 @@ describe('Momo App Tests', () => {
         await allowButton.waitForDisplayed({ timeout: 10000 });
         await allowButton.click();
 
+        const allowNotificationButton = await $("com.android.permissioncontroller:id/permission_allow_button");
+        await allowNotificationButton.click();
+
         const phoneInput = await $('[id="PhoneInput"]');
         await phoneInput.setValue('0988575556');
 
         const continueButton = await $('[id="Tiếp tục/Button"]');
         await continueButton.click();
-        // Continue
-        await passwordInput.setValue('password123');
-        await loginButton.click();
-        const homeScreen = await $('~HomeScreen');
-        expect(await homeScreen.isDisplayed()).to.be.true;
+
+        const otpInput = await $('[id="OTPTextInput"]');
+        await otpInput.setValue('0000');
+        
+        const passwordInput = await $('[id="PasswordInput"]');
+        await passwordInput.setValue('000000');
+        
+        const homeScreen = await $('[id="Đăng nhập/Button"]');
+        expect(await homeScreen.isDisplayed()).to.be.false;
     });
 
     it('should display correct account balance', async () => {
